@@ -1,0 +1,19 @@
+{
+    "task": [
+        {
+            "id": 1,
+            "title" : "Wrote my first Vue code in Dec 2022",
+            "date" : "14th of December 2022"
+        },
+        {
+            "id": 2,
+            "title" : "Started learning Vue in Dec 2022",
+            "date" : "09th of December 2022"
+        },
+        {
+            "id": 3,
+            "title" : "Learnt alot of life lessons and met alot of amazing people",
+            "date" : "31th of December 2022"
+        }
+    ]
+}
