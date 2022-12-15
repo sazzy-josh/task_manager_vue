@@ -1,15 +1,10 @@
 <template>
-  <div>
-    
-  </div>
+  
 </template>
 
 <script>
 export default {
-  name : "Card",
-  props : {
-
-  }
+ name : "Footer"
 }
 </script>
 
