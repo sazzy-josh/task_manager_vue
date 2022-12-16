@@ -1,5 +1,7 @@
 <template>
-    <button class="btn" :style="{'background' : color}" @click="handleClick">{{text}}</button>
+    <button class="btn" @click="handleBtnClick">
+     <slot></slot>
+    </button>
 </template>
 
 <script>
@@ -9,18 +11,13 @@ export default {
         handleClick: {
             type: Function,
         },
-        color: String ,
-        text :{
-            type : String ,
-            required : true
-        }
     },
     methods: {
-        handleClick(){
-           this.$emit('handle-click')
+        handleBtnClick(){
+           this.$emit('btn-click')
         }
     },
-    emits : ['handle-click']
+    emits : ['btn-click']
 }
 </script>
 
