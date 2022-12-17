@@ -1,19 +1,40 @@
 {
-    "task": [
-        {
-            "id": 1,
-            "title" : "Wrote my first Vue code in Dec 2022",
-            "date" : "14th of December 2022"
-        },
-        {
-            "id": 2,
-            "title" : "Started learning Vue in Dec 2022",
-            "date" : "09th of December 2022"
-        },
-        {
-            "id": 3,
-            "title" : "Learnt alot of life lessons and met alot of amazing people",
-            "date" : "31th of December 2022"
-        }
-    ]
+  "task": [
+    {
+      "id": 1,
+      "title": "Wrote my first Vue code in Dec 2022",
+      "date": "14th of December 2022",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "title": "Started learning Vue in Dec 2022",
+      "date": "09th of December 2022",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "title": "Learnt alot of life lessons and met alot of amazing people",
+      "date": "31th of December 2022",
+      "reminder": false
+    },
+    {
+      "task": "Aliquam consequatur",
+      "name": "12-Sep-1971",
+      "reminder": true,
+      "id": 4
+    },
+    {
+      "task": "Est doloremque labor",
+      "name": "24-Sep-2011",
+      "reminder": true,
+      "id": 5
+    },
+    {
+      "task": "Qui eiusmod mollitia",
+      "name": "07-Feb-1996",
+      "reminder": true,
+      "id": 6
+    }
+  ]
 }

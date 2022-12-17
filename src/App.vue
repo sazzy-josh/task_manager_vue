@@ -15,21 +15,28 @@ import axios from 'axios'
         }
     },
     methods:{
-        async getAllTask(){
+        async getAllTask(){  //FETCHES LIST OF ALL TASK ON CREATION & MOUNT OF COMPONENT...
           try {
             const req = await axios.get(' http://localhost:4000/task');
             this.allTask = await req.data
+           
+
           } catch (error) {
             this.errorMessage = error.message
           }
         },
-        toggleShow(){
-            // console.log(1)
-         this.showTask = !this.showTask
+        
+        toggleShow(){ //HANDLES TOGGLING OF FORM SECTION
+          this.showTask = !this.showTask
+        },
+      
+       async handleFormSubmit(formdata){   // HANDLES FORM SUBMISSION
+            const { data  } = await axios.post(' http://localhost:4000/task' , formdata )
+            this.allTask = [ data , ...this.allTask]
         }
     },
     created(){
-      // fetch on init
+      // FETCH ON INIT
       this.getAllTask()
           
     } 
@@ -41,8 +48,9 @@ import axios from 'axios'
 <template>
     <div class="container">
       <div class="layout">
+        <!-- <pre>{{ JSON.stringify(allTask , null , 2) }}</pre> -->
         <Header :showTask="showTask" @btn-click='toggleShow' />
-        <router-view  :showTask="showTask" />
+        <router-view :showTask="showTask" @submit-form='handleFormSubmit' />
       </div>
         
     </div>

@@ -13,7 +13,8 @@ export default {
         },
     },
     methods: {
-        handleBtnClick(){
+        handleBtnClick(e){
+           e.preventDefault();
            this.$emit('btn-click')
         }
     },
