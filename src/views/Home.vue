@@ -1,14 +1,11 @@
 <template>
-  <div class="form-field" v-if="showTask" >
+  <div class="form__field" v-if="showTask" >
    <AddTask @submit-form="submit" /> 
   </div>
-  <div class="all-task">
+  <div class="all__task">
     <Tasks v-if="!isLoading" :allTask="allTask" @delete-task="deleteTask" /> 
     <Loader v-else />
    </div>
-
-
- 
 </template>
 
 <script> 
@@ -39,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-.all-task{
+.all__task{
   display: flex;
   flex-direction: column;
   justify-content: center;

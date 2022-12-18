@@ -4,9 +4,9 @@
        Task Manager
      </header>
      
-      <div class="toggle-btn">
-       <Button @btn-click="$emit('btn-click')" :class="[ showTask ? 'green-btn' : 'red-btn' ]">
-       {{ showTask ? 'Add Task' : 'Close'}}
+      <div class="toggle__btn">
+       <Button @btn-click="$emit('btn-click')" :class="[ !showTask ? 'green__btn' : 'red__btn' ]">
+       {{ !showTask ? 'Add Task' : 'Close'}}
        </Button>
       </div>
   </div>
@@ -37,17 +37,17 @@ export default {
 
 }
 
-.toggle-btn{
+.toggle__btn{
     width: 100px;
-    height: 50px;
+    height: 45px;
 }
 
-.green-btn{
+.green__btn{
     background: rgb(73, 153, 73);
 }
 
 
-.red-btn{
+.red__btn{
     background: rgb(185, 53, 53);
 }
 </style>

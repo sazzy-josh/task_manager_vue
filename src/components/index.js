@@ -6,3 +6,4 @@ export { default as AddTask } from './AddTask.vue'
 export { default as Tasks } from './Tasks.vue'
 export { default as Loader } from './Loader.vue'
 export { default as Task } from './Task.vue'
+export { default as Modal } from "./Modal.vue"

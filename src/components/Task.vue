@@ -1,12 +1,15 @@
 <template>
-<div :class="['single-card', task.reminder ? 'reminder' : '']">
+<div :class="['single__card', task.reminder ? 'reminder' : '']">
  <span>
    <p>{{task.title}}</p>
    <p> - {{task.date}}</p>
   </span>
-  <p class="delete-btn" @click="deleteTask(task.id)">
+ <div>
+  <p class="delete__btn" @click="deleteTask(task.id)">
    +
   </p>
+  <p class="edit__btn">🖊</p>
+ </div>
 </div>
 </template>
 
@@ -26,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
- .single-card{
+ .single__card{
     display: flex;
     justify-content: space-between;
     background-color: rgb(244, 249, 255);
@@ -37,7 +40,7 @@ export default {
     border-style: none none none solid; 
     border-left-color: rgb(47, 160, 47);
  }
- .delete-btn{
+ .delete__btn{
     display: flex;
     cursor: pointer;
     justify-content: center;
@@ -55,8 +58,14 @@ export default {
     user-select: none;/* remove tap highlight */
  }
 
-.delete-btn:focus {
+.delete__btn:focus {
     outline: none; /* remove outline */
     box-shadow: none; /* remove box shadow */
+}
+.edit__btn{
+    text-decoration: underline;
+    cursor: pointer;
+    color:blue;
+    font-weight:bold;
 }
 </style>
