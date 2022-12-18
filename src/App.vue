@@ -11,7 +11,8 @@ import axios from 'axios'
         return{
             showTask: true,
             allTask : [],
-            errorMessage : ''
+            errorMessage : '',
+            isLoading : true
         }
     },
     methods:{
@@ -19,8 +20,7 @@ import axios from 'axios'
           try {
             const req = await axios.get(' http://localhost:4000/task');
             this.allTask = await req.data
-           
-
+            this.isLoading = false
           } catch (error) {
             this.errorMessage = error.message
           }
@@ -31,15 +31,20 @@ import axios from 'axios'
         },
       
        async handleFormSubmit(formdata){   // HANDLES FORM SUBMISSION
-            const { data  } = await axios.post(' http://localhost:4000/task' , formdata )
-            this.allTask = [ data , ...this.allTask]
+            this.isLoading = true
+            const { data } = await axios.post('http://localhost:4000/task' , formdata );
+            this.allTask = [ data , ...this.allTask];
+            this.isLoading  = false
+        },
+        async handleDelete(id){
+         await axios.delete(`http://localhost:4000/task/${id}`)
+         this.allTask = this.allTask.filter((item) => item.id !== id) 
         }
     },
     created(){
       // FETCH ON INIT
-      this.getAllTask()
-          
-    } 
+         this.getAllTask();      
+    }
   }
 
 
@@ -50,7 +55,13 @@ import axios from 'axios'
       <div class="layout">
         <!-- <pre>{{ JSON.stringify(allTask , null , 2) }}</pre> -->
         <Header :showTask="showTask" @btn-click='toggleShow' />
-        <router-view :showTask="showTask" @submit-form='handleFormSubmit' />
+        <router-view 
+           :showTask="showTask" 
+           :allTask="allTask"
+           :isLoading="isLoading" 
+           @submit-form='handleFormSubmit' 
+           @delete-task="handleDelete"
+           />
       </div>
         
     </div>
@@ -87,4 +98,5 @@ import axios from 'axios'
   color: whitesmoke;
   cursor: pointer;
 }
+
 </style>

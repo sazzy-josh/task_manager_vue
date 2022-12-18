@@ -10,7 +10,7 @@
       "id": 2,
       "title": "Started learning Vue in Dec 2022",
       "date": "09th of December 2022",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 3,
@@ -19,22 +19,16 @@
       "reminder": false
     },
     {
-      "task": "Aliquam consequatur",
-      "name": "12-Sep-1971",
-      "reminder": true,
-      "id": 4
-    },
-    {
-      "task": "Est doloremque labor",
-      "name": "24-Sep-2011",
+      "title": "Young Champ..Never  give up on that Dream...",
+      "date": "31st Dec 2022",
       "reminder": true,
       "id": 5
     },
     {
-      "task": "Qui eiusmod mollitia",
-      "name": "07-Feb-1996",
+      "title": "Everyday is an oppurtinity to become better",
+      "date": "18th, December, 2022",
       "reminder": true,
-      "id": 6
+      "id": 7
     }
   ]
 }

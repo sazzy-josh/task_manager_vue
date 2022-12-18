@@ -1,11 +1,11 @@
 <template>
   <div class="form-field" v-if="showTask" >
    <AddTask @submit-form="submit" /> 
-   <div class="all-task">
-    <Tasks v-if="!loading" /> 
+  </div>
+  <div class="all-task">
+    <Tasks v-if="!isLoading" :allTask="allTask" @delete-task="deleteTask" /> 
     <Loader v-else />
    </div>
-  </div>
 
 
  
@@ -21,18 +21,18 @@ export default {
       Tasks,
       Loader,
     },
-    data(){
-      return {
-        loading : false
-      }
-    },
     props : {
-        showTask : Boolean
+        showTask : Boolean,
+        isLoading : Boolean,
+        allTask : Array
     },
-    emits : ['submit-form'],
+    emits : ['submit-form' , 'delete-task'],
     methods : {
       submit(data){
         this.$emit("submit-form" , data)
+      },
+      deleteTask(id){
+        this.$emit("delete-task" , id)
       }
     }
 }
@@ -41,8 +41,10 @@ export default {
 <style scoped>
 .all-task{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  row-gap: 15px;
   width: 100%;
   height: auto;
   padding: 20px 0px;
