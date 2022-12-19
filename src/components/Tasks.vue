@@ -1,7 +1,7 @@
 <template> 
 
   <div v-for="task in allTask" :key="task.id" class="task" >
-    <task :task="task" @delete-btn="$emit('delete-task' , task.id)"/>
+    <task :task="task" :isModalOpen="isModalOpen" @edit-task="$emit('edit-task' , task.id)" @delete-btn="$emit('delete-task' , task.id)"/>
   </div>
 </template>
 
@@ -11,12 +11,13 @@ import Task from '../components/Task.vue'
 export default {
  name : "Tasks",
  props : {
-    allTask : Array
+    allTask : Array,
+    isModalOpen : Function
  },
  components : {
     Task
  },
- emits: ['delete-task']
+ emits: ['delete-task' , 'edit-task' ]
 }
 </script>
 

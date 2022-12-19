@@ -8,7 +8,7 @@
   <p class="delete__btn" @click="deleteTask(task.id)">
    +
   </p>
-  <p class="edit__btn">🖊</p>
+  <p class="edit__btn" @click="$emit('edit-task' , task.id )">🖊</p>
  </div>
 </div>
 </template>
@@ -17,14 +17,15 @@
 export default {
   name : "Task",
   props : {
-    task : Object
+    task : Object,
+    isModalOpen : Function
   },
   methods : {
     deleteTask(id){
      this.$emit('delete-btn' , id)
     }
   },
-  emits : ['delete-btn']
+  emits : ['delete-btn' , 'edit-task']
 }
 </script>
 

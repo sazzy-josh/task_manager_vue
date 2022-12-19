@@ -3,7 +3,12 @@
    <AddTask @submit-form="submit" /> 
   </div>
   <div class="all__task">
-    <Tasks v-if="!isLoading" :allTask="allTask" @delete-task="deleteTask" /> 
+    <Tasks v-if="!isLoading" 
+        :allTask="allTask" 
+        :isModalOpen="isModalOpen"
+        @delete-task="deleteTask" 
+        @edit-task="handleEdit"
+    /> 
     <Loader v-else />
    </div>
 </template>
@@ -21,15 +26,19 @@ export default {
     props : {
         showTask : Boolean,
         isLoading : Boolean,
-        allTask : Array
+        allTask : Array,
+        isModalOpen : Function
     },
-    emits : ['submit-form' , 'delete-task'],
+    emits : ['submit-form' , 'delete-task' , 'edit-task'],
     methods : {
       submit(data){
         this.$emit("submit-form" , data)
       },
       deleteTask(id){
         this.$emit("delete-task" , id)
+      },
+      handleEdit(id){
+       this.$emit('edit-task' , id )
       }
     }
 }

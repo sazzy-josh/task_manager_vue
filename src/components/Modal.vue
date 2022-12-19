@@ -8,10 +8,32 @@
 
 <script>
 export default {
-
+    name : 'Modal'
 }
 </script>
 
-<style>
+<style scoped>
+.modal__overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal__content{
+  
+   background: white;
+   width: 40%;
+   padding: 0.5rem;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: 0.5rem;
+}
 
 </style>
