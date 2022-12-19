@@ -1,24 +1,6 @@
 {
   "task": [
     {
-      "id": 1,
-      "title": "Wrote my first Vue code in Dec 2022",
-      "date": "14th of December 2022",
-      "reminder": true
-    },
-    {
-      "id": 2,
-      "title": "Started learning Vue in Dec 2022",
-      "date": "09th of December 2022",
-      "reminder": false
-    },
-    {
-      "id": 3,
-      "title": "Learnt alot of life lessons and met alot of amazing people",
-      "date": "31th of December 2022",
-      "reminder": false
-    },
-    {
       "title": "Young Champ..Never  give up on that Dream...",
       "date": "31st Dec 2022",
       "reminder": true,
@@ -29,6 +11,12 @@
       "date": "18th, December, 2022",
       "reminder": true,
       "id": 7
+    },
+    {
+      "title": "Happy New Year",
+      "date": "1st January 2023",
+      "reminder": false,
+      "id": 8
     }
   ]
 }

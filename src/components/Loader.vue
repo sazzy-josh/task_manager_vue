@@ -1,5 +1,5 @@
 <template>
-  <div class="lds-ripple">
+  <div class="lds__ripple">
      <div></div>
      <div></div>
   </div>
@@ -12,20 +12,20 @@ export default {
 </script>
 
 <style scoped>
- .lds-ripple {
+ .lds__ripple {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
 }
-.lds-ripple div {
+.lds__ripple div {
   position: absolute;
   border: 4px solid rgb(82, 138, 82);
   opacity: 1;
   border-radius: 50%;
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
-.lds-ripple div:nth-child(2) {
+.lds__ripple div:nth-child(2) {
   animation-delay: -0.5s;
 }
 @keyframes lds-ripple {

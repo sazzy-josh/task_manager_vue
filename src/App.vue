@@ -1,18 +1,20 @@
 <script>
-import { Header } from './components'
+import { Header,Modal } from './components'
 import axios from 'axios'
 
   export default {
     name : 'App' ,
     components : {
-      Header
+      Header,
+      Modal
     },
     data(){
         return{
             showTask: true,
             allTask : [],
             errorMessage : '',
-            isLoading : true
+            isLoading : true,
+            isModalOpen : false
         }
     },
     methods:{
@@ -21,6 +23,7 @@ import axios from 'axios'
             const req = await axios.get(' http://localhost:4000/task');
             this.allTask = await req.data
             this.isLoading = false
+            console.log(req)
           } catch (error) {
             this.errorMessage = error.message
           }
@@ -55,6 +58,9 @@ import axios from 'axios'
       <div class="layout">
         <!-- <pre>{{ JSON.stringify(allTask , null , 2) }}</pre> -->
         <Header :showTask="showTask" @btn-click='toggleShow' />
+         <teleport to="#portal-root">
+          <Modal />
+         </teleport>
         <router-view 
            :showTask="showTask" 
            :allTask="allTask"
