@@ -1,7 +1,12 @@
 <template>
    <div>
      <label :for="label">{{label}}</label>
-     <input type="text" :placeholder="placeholder" :name="label" :id="label" :value="modelValue" @input="$emit('update:modelValue' , $event.target.value)">
+     <input type="text" 
+            :placeholder="placeholder" 
+            :name="label" :id="label" 
+            :value="modelValue" 
+            @input="$emit('update:modelValue' , $event.target.value)"
+      />
    </div>
 </template>
 

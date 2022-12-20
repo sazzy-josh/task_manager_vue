@@ -24,5 +24,9 @@ export default {
 
 
 <style scoped>
+btn{
+    color : white;
+    cursor : pointer
+}
 
 </style>

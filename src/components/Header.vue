@@ -5,7 +5,8 @@
      </header>
      
       <div class="toggle__btn">
-       <Button @btn-click="$emit('btn-click')" :class="[ !showTask ? 'green__btn' : 'red__btn' ]">
+       <Button @btn-click="$emit('btn-click')" 
+               :class="[ !showTask ? 'green__btn' : 'red__btn' ]">
        {{ !showTask ? 'Add Task' : 'Close'}}
        </Button>
       </div>

@@ -1,8 +1,14 @@
 <template>
     <form>
     
-        <TextField label="Task for the Day" placeholder='Enter your task...' :modelValue="formData.title" @update:modelValue="newValue => formData.title = newValue" />
-        <TextField label="Date & Time" placeholder='Date and Time' :modelValue="formData.date" @update:modelValue="newValue => formData.date = newValue" />
+        <TextField label="Task for the Day" 
+                   placeholder='Enter your task...' 
+                   :modelValue="formData.title" @update:modelValue="newValue => formData.title = newValue" 
+                />
+        <TextField label="Date & Time" 
+                   placeholder='Date and Time' 
+                   :modelValue="formData.date" @update:modelValue="newValue => formData.date = newValue" 
+                />
     
         <div class="set__reminder">
             <label for="reminder">Set Reminder</label>

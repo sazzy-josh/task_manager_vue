@@ -1,7 +1,10 @@
 <template> 
 
   <div v-for="task in allTask" :key="task.id" class="task" >
-    <task :task="task" :isModalOpen="isModalOpen" @edit-task="$emit('edit-task' , task.id)" @delete-btn="$emit('delete-task' , task.id)"/>
+    <task :task="task" 
+          :isModalOpen="isModalOpen" @edit-task="$emit('edit-task' , task.id)" 
+          @delete-btn="$emit('delete-task' , task.id)"
+        />
   </div>
 </template>
 

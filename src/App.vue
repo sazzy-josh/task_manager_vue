@@ -1,5 +1,5 @@
 <script>
-import { Header, Modal, TextField } from './components'
+import { Header, Modal, TextField , Button } from './components'
 import axios from 'axios'
 
 export default {
@@ -7,7 +7,8 @@ export default {
     components: {
         Header,
         Modal,
-        TextField
+        TextField,
+        Button,
     },
     data() {
         return {
@@ -59,6 +60,22 @@ export default {
                 this.taskID = taskToEdit.id
             }
         },
+
+        async submitEditForm(formdata){
+         const { data } = await axios.put(`http://localhost:4000/task/${this.taskID}`, formdata)
+        //    let taskToEdit = this.allTask.find((item) => item.id === this.taskID)
+        debugger
+         this.allTask = this.allTask.map(item => {
+            if(item.id === this.taskID){
+                return {...item , 
+                    title: "taskToEdit.title",
+                    date: "taskToEdit.date",
+                    reminder: "taskToEdit.reminder"  }
+            } return item
+         })
+           console.log(this.allTask)
+          this.isModalOpen = false
+        },
      
         toggleShow() { //HANDLES TOGGLING OF FORM SECTION
             this.showTask = !this.showTask
@@ -75,16 +92,36 @@ export default {
     <div class="container">
         <div class="layout">
             <!-- <pre>{{ JSON.stringify(allTask , null , 2) }}</pre> -->
-            <Header :showTask="showTask" @btn-click='toggleShow' />
+            <Header :showTask="showTask" 
+                     @btn-click='toggleShow' 
+                    />
             <teleport to="#portal-root">
                 <Modal v-if="isModalOpen">
-                    <p class="close__modal__btn" @click="ToggleModal">
+                    <p class="close__modal__btn" 
+                       @click="ToggleModal">
                         +
                     </p>
                     <form>
-                     <TextField label="Edit Task" :modelValue="editFormData.title" placeholder="Enter your task..." />
+                        <TextField label="Edit Task" 
+                                :modelValue="editFormData.title" 
+                                @update:modelValue="newValue => editFormData.title = newValue" 
+                                placeholder="Enter your task..." 
+                            />
 
-                      <TextField label="Edit Date" :modelValue="editFormData.date" placeholder="Enter your date..." />
+                        <TextField label="Edit Date" 
+                                :modelValue="editFormData.date" 
+                                @update:modelValue="newValue => editFormData.date = newValue" 
+                                placeholder="Enter your date..." 
+                            />
+
+                        <div class="set__reminder">
+                          <label for="reminder">Set Reminder</label>
+                          <input type="checkbox" v-model="editFormData.reminder" />
+                        </div>
+                     
+                        <Button class="submit__btn" @btn-click='submitEditForm(editFormData)'>
+                          Submit
+                        </Button>
                     </form>
                 </Modal>
             </teleport>
@@ -159,10 +196,22 @@ export default {
     /* remove box shadow */
 }
 
+.submit__btn {
+    background: black;
+    height: 40px;
+    border-radius: 10px;
+}
+
 form{
     display: flex;
     flex-direction: column;
     row-gap: 5px;
     padding: 20px 0px;
+}
+.set__reminder {
+    display: flex;
+    margin: 10px 0px;
+    column-gap: 24px;
+    align-items: center;
 }
 </style>
