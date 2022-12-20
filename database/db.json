@@ -9,18 +9,18 @@
     {
       "title": "Grateful for the priviledge to see another day..",
       "date": "21th Dec 2022",
-      "reminder": true,
+      "reminder": false,
       "id": 8
     },
     {
-      "title": "Hello Joshua",
-      "date": "12th of December ",
+      "title": "Take DSA classes Today...",
+      "date": "20th, December 2022 ",
       "reminder": true,
       "id": 9
     },
     {
-      "title": "thankful for life",
-      "date": "112th Dec",
+      "title": "God has been so good to me..",
+      "date": "2th Dec 2025",
       "reminder": true,
       "id": 10
     }

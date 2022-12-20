@@ -61,19 +61,24 @@ export default {
             }
         },
 
-        async submitEditForm(formdata){
-         const { data } = await axios.put(`http://localhost:4000/task/${this.taskID}`, formdata)
-        //    let taskToEdit = this.allTask.find((item) => item.id === this.taskID)
-        debugger
-         this.allTask = this.allTask.map(item => {
+        submitEditForm(formdata){
+            let editedFormdata = {
+                title: formdata.title, 
+                date: formdata.date , 
+                reminder: formdata.reminder
+            }
+         axios.put(`http://localhost:4000/task/${this.taskID}`, formdata)
+        //  this.allTask = this.allTask.map((item) => item.id === this.taskID ? {...item, ...editedFormdata } : item)
+        //     or
+        // debugger
+         this.allTask = this.allTask.map((item) => {
             if(item.id === this.taskID){
-                return {...item , 
-                    title: "taskToEdit.title",
-                    date: "taskToEdit.date",
-                    reminder: "taskToEdit.reminder"  }
+                console.log(item)
+                return {...item , ...formdata  
+                    }
             } return item
          })
-           console.log(this.allTask)
+           
           this.isModalOpen = false
         },
      
