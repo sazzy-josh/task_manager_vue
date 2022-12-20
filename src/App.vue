@@ -61,19 +61,18 @@ export default {
             }
         },
 
-        submitEditForm(formdata){
+        async submitEditForm(formdata){ //HANDLES SUBMISSION OF EDITED TASK 
             let editedFormdata = {
                 title: formdata.title, 
                 date: formdata.date , 
                 reminder: formdata.reminder
             }
-         axios.put(`http://localhost:4000/task/${this.taskID}`, formdata)
+        await axios.put(`http://localhost:4000/task/${this.taskID}`, formdata)
         //  this.allTask = this.allTask.map((item) => item.id === this.taskID ? {...item, ...editedFormdata } : item)
         //     or
         // debugger
          this.allTask = this.allTask.map((item) => {
             if(item.id === this.taskID){
-                console.log(item)
                 return {...item , ...formdata  
                     }
             } return item
@@ -218,5 +217,13 @@ form{
     margin: 10px 0px;
     column-gap: 24px;
     align-items: center;
+}
+@media only screen and (max-width: 720px){
+    .layout {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
 }
 </style>

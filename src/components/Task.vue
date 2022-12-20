@@ -4,7 +4,7 @@
    <p>{{task.title}}</p>
    <p> - {{task.date}}</p>
   </span>
- <div>
+ <div class="btn_container">
   <p class="delete__btn" @click="deleteTask(task.id)">
    +
   </p>
@@ -68,5 +68,8 @@ export default {
     cursor: pointer;
     color:blue;
     font-weight:bold;
+}
+.btn_container{
+    padding-left: 20px;
 }
 </style>

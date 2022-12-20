@@ -7,22 +7,16 @@
       "id": 5
     },
     {
-      "title": "Grateful for the priviledge to see another day..",
+      "title": "Grateful for the priviledge to see another  beautiful day😊..",
       "date": "21th Dec 2022",
       "reminder": false,
       "id": 8
     },
     {
-      "title": "Take DSA classes Today...",
-      "date": "20th, December 2022 ",
+      "title": "Take DSA classes Today till 2pm...",
+      "date": "20th, December 2022     1PM-3PM ",
       "reminder": true,
       "id": 9
-    },
-    {
-      "title": "God has been so good to me..",
-      "date": "2th Dec 2025",
-      "reminder": true,
-      "id": 10
     }
   ]
 }

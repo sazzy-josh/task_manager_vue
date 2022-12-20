@@ -28,12 +28,17 @@ export default {
   
    background: white;
    width: 40%;
-   padding: 0.5rem;
+   padding: 20px;
    position: absolute;
    left: 50%;
    top: 50%;
    transform: translate(-50%, -50%);
    border-radius: 0.5rem;
+}
+@media only screen and (max-width: 720px){
+   .modal__content{
+     width: 80%;
+   }
 }
 
 </style>
