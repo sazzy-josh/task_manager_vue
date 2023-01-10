@@ -1,18 +1,18 @@
 <template>
   <div class="lds__ripple">
-     <div></div>
-     <div></div>
+    <div></div>
+    <div></div>
   </div>
 </template>
 
 <script>
 export default {
- name : 'Loader'
-}
+  name: "Loader",
+};
 </script>
 
 <style scoped>
- .lds__ripple {
+.lds__ripple {
   display: inline-block;
   position: relative;
   width: 80px;
@@ -58,5 +58,4 @@ export default {
     opacity: 0;
   }
 }
-
 </style>
