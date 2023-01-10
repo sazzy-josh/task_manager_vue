@@ -1,32 +1,30 @@
 <template>
-    <button class="btn" @click="handleBtnClick">
-     <slot></slot>
-    </button>
+  <button class="btn" @click="handleBtnClick">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
 export default {
-    name: "Button",
-    props: {
-        handleClick: {
-            type: Function,
-        },
+  name: "Button",
+  props: {
+    handleClick: {
+      type: Function,
     },
-    methods: {
-        handleBtnClick(e){
-           e.preventDefault();
-           this.$emit('btn-click')
-        }
+  },
+  methods: {
+    handleBtnClick(e) {
+      e.preventDefault();
+      this.$emit("btn-click");
     },
-    emits : ['btn-click']
-}
+  },
+  emits: ["btn-click"],
+};
 </script>
 
-
 <style scoped>
-btn{
-    color : white;
-    cursor : pointer
+btn {
+  color: white;
+  cursor: pointer;
 }
-
 </style>
