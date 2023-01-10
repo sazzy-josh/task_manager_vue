@@ -4,6 +4,7 @@
       <p>{{ task.title }}</p>
       <p>- {{ task.date }}</p>
     </span>
+    
     <div class="btn_container">
       <p class="delete__btn" @click="deleteTask(task.id)">+</p>
       <p class="edit__btn" @click="$emit('edit-task', task.id)">🖊</p>
